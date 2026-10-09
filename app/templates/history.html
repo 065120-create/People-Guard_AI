@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Case history{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Records</p>
+    <h1>Case history</h1>
+    <p class="lede">Cases are visible only in this browser's workspace. Restricted (POSH) cases show no employee details in this list.</p>
+  </div>
+  <div class="head-actions">
+    <button class="btn btn-ghost" id="loadAll">Load demo cases</button>
+    <button class="btn btn-danger-ghost" id="deleteAll">Delete all</button>
+  </div>
+</div>
+<div class="card">
+  <div class="filters">
+    <input id="filterText" type="search" placeholder="Search by ID or title" aria-label="Search cases">
+    <select id="filterStatus" aria-label="Filter by status">
+      <option value="">All statuses</option>
+      <option value="awaiting_review">Awaiting review</option>
+      <option value="escalated_urgent">Urgent</option>
+      <option value="running">Running</option>
+      <option value="approved">Approved</option>
+      <option value="returned">Returned</option>
+      <option value="error">Error</option>
+    </select>
+    <label class="check"><input type="checkbox" id="filterFlag"> Escalation flagged only</label>
+  </div>
+  <div id="caseTable" class="list-table"><p class="muted pad">Loading…</p></div>
+</div>
+{% endblock %}

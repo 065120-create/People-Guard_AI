@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}PeopleGuard AI{% endblock %} · PeopleGuard AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css?v={{ version }}">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="{{ page }}" {% if case_id %}data-case-id="{{ case_id }}"{% endif %}>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 32 32" aria-hidden="true" class="brand-mark"><path d="M16 2.5 4.5 7v8.2c0 7.1 4.9 12.4 11.5 14.3 6.6-1.9 11.5-7.2 11.5-14.3V7L16 2.5Z" fill="currentColor"/><path d="m10.8 16.2 3.6 3.6 7-7.4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><strong>PeopleGuard</strong> AI</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="/" class="{% if page == 'dashboard' %}active{% endif %}">
+          <svg viewBox="0 0 24 24"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg>Dashboard</a>
+        <a href="/cases/new" class="{% if page == 'new_case' %}active{% endif %}">
+          <svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z"/></svg>New case</a>
+        <a href="/cases" class="{% if page in ('history', 'case') %}active{% endif %}">
+          <svg viewBox="0 0 24 24"><path d="M5 4h14v2H5V4Zm0 5h14v2H5V9Zm0 5h14v2H5v-2Zm0 5h9v2H5v-2Z"/></svg>Case history</a>
+        <a href="/policies" class="{% if page == 'policies' %}active{% endif %}">
+          <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6V3Zm2 2v14h9V8h-3V5H8Zm2 6h5v2h-5v-2Zm0 4h5v2h-5v-2Z"/></svg>Policy library</a>
+        <a href="/settings" class="{% if page == 'settings' %}active{% endif %}">
+          <svg viewBox="0 0 24 24"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm8.4 4.6-1.9 1.1.2 2.2-2.1 1.5-1.9-1-2 .9-.6 2.2h-2.6l-.6-2.2-2-.9-1.9 1-2.1-1.5.2-2.2-1.9-1.1V10.9l1.9-1.1-.2-2.2 2.1-1.5 1.9 1 2-.9.6-2.2h2.6l.6 2.2 2 .9 1.9-1 2.1 1.5-.2 2.2 1.9 1.1v2.2Z"/></svg>AI setup &amp; about</a>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="mode-pill mode-{{ llm.state }}">
+          <span class="dot"></span>
+          {% if llm.live %}Live AI · {{ llm.provider }}{% else %}Demo mode{% endif %}
+        </div>
+        <p>Academic prototype · v{{ version }}</p>
+      </div>
+    </aside>
+
+    <div class="main-col">
+      <header class="topbar">
+        <button class="menu-btn" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false" id="menuBtn">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
+        </button>
+        <a class="brand brand-top" href="/"><strong>PeopleGuard</strong>&nbsp;AI</a>
+        <div class="notice-strip" role="note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2Zm1 15h-2v-2h2v2Zm0-4h-2V9h2v4Z"/></svg>
+          <span><strong>Fictional data.</strong> Northstar Retail Services Pvt. Ltd. and all cases are synthetic. Drafts support HR — they never decide outcomes.</span>
+        </div>
+      </header>
+      {% if not llm.live %}
+      <div class="mode-banner {% if llm.state == 'missing_key' or llm.state == 'error' %}warn{% endif %}">
+        {% if llm.state != 'demo' %}<strong>AI not configured:</strong> {% endif %}{{ llm.message }} <a href="/settings">How to enable live AI</a>
+      </div>
+      {% endif %}
+      <main id="main" class="content">
+        {% block content %}{% endblock %}
+      </main>
+      <footer class="footer">
+        PeopleGuard AI is an academic decision-support prototype. It does not determine guilt, impose discipline, terminate employment or replace any legally required investigation or statutory committee.
+      </footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/js/app.js?v={{ version }}"></script>
+</body>
+</html>

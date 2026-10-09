@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Policy library{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Knowledge base</p>
+    <h1>Policy library</h1>
+    <p class="lede">The fictional Northstar handbook is the only company-policy source. Every citation in a report links back to a section listed here.</p>
+  </div>
+  <div class="head-actions">
+    <button class="btn btn-ghost" id="reindexBtn">Re-index handbook</button>
+  </div>
+</div>
+
+<div class="grid-2 grid-policy">
+  <section class="card">
+    <div class="card-head"><h2>Indexed documents</h2></div>
+    <div id="docList"><p class="muted">Loading…</p></div>
+    <details class="upload-box" id="uploadBox">
+      <summary>Upload an updated handbook</summary>
+      <form id="uploadForm">
+        <p class="muted small">Replaces or adds a handbook for every user of this deployment, so it needs the server's admin token. DOCX with Heading 1 / Heading 2 styles gives the best section references.</p>
+        <input type="file" name="file" accept=".docx,.pdf,.txt,.md" required>
+        <input type="password" name="admin_token" placeholder="Admin token" autocomplete="off" required>
+        <button class="btn btn-primary" type="submit">Upload and re-index</button>
+        <p class="err" id="uploadErr"></p>
+      </form>
+    </details>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Search the handbook</h2></div>
+    <form id="searchForm" class="search-row">
+      <input id="searchQ" type="search" placeholder="e.g. overtime approval, leave balance, Internal Committee" aria-label="Search policy text">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    <label class="check small"><input type="checkbox" id="searchAll"> Include non-evidence sections (contents, Appendix A rules, Appendix B examples)</label>
+    <div id="searchResults" class="results"></div>
+  </section>
+</div>
+
+<section class="card">
+  <div class="card-head"><h2>Sections</h2><span class="muted small" id="sectionCount"></span></div>
+  <div id="sectionTree" class="section-tree"><p class="muted">Loading…</p></div>
+</section>
+
+<dialog id="sectionDialog" class="dialog">
+  <form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form>
+  <div id="sectionBody"></div>
+</dialog>
+{% endblock %}

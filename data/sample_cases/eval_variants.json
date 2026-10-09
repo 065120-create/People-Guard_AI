@@ -1,0 +1,247 @@
+{
+  "_note": "Synthetic wording variants used ONLY by scripts/evaluate.py. V1-V10 were written before the first evaluation run; after that run exposed misses on V4, V8 and V10, the detection patterns and expansion matching were fixed, so V1-V10 are no longer fully held out. V11-V14 were written after those fixes and before the next run, as a fresh held-out check.",
+  "cases": [
+    {
+      "id": "V1",
+      "input": {
+        "title": "Extra hours missing from pay",
+        "grievance_category": "other",
+        "description": "For the last three weekends I was asked to come in early to receive deliveries. None of that time is in my salary statement for September."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "STANDARD",
+        "must_retrieve_any": [
+          "3.3",
+          "4.5",
+          "4.3",
+          "3.5"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V2",
+      "input": {
+        "title": "Leave cancelled",
+        "grievance_category": "leave_absence",
+        "description": "My approved casual leave was cancelled one day before and the days were still deducted from my balance in the portal."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "STANDARD",
+        "must_retrieve_any": [
+          "5.5",
+          "5.2",
+          "5.1"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V3",
+      "input": {
+        "title": "Supervisor belittles me",
+        "grievance_category": "manager_conduct",
+        "description": "My supervisor mocks my accent in team meetings and calls me stupid. Others laugh and I feel embarrassed every day."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "STANDARD",
+        "must_retrieve_any": [
+          "2.4",
+          "9.6",
+          "10.1"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V4",
+      "input": {
+        "title": "Uncomfortable behaviour by colleague",
+        "grievance_category": "other",
+        "description": "A colleague keeps asking me out after I said no, sends me late night messages with winking photos and blocked the door of the pantry so I could not leave."
+      },
+      "expected": {
+        "route": "posh_ic",
+        "urgency": "HIGH",
+        "must_retrieve_any": [
+          "8.2",
+          "8.3"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V5",
+      "input": {
+        "title": "Warehouse incident",
+        "grievance_category": "other",
+        "description": "A co-worker pushed me against the racking during an argument and said next time it will be worse. I do not feel safe on my shift tonight."
+      },
+      "expected": {
+        "route": "urgent_safety",
+        "urgency": "URGENT",
+        "must_retrieve_any": [
+          "7.4",
+          "7.2",
+          "8.5"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V6",
+      "input": {
+        "title": "Not coming to work",
+        "grievance_category": "leave_absence",
+        "reported_by": "manager",
+        "description": "Cashier has been a no-show for a week and her phone is switched off. Store manager wants to issue a termination letter."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "STANDARD",
+        "must_retrieve_any": [
+          "5.4"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V7",
+      "input": {
+        "title": "Final settlement delayed",
+        "grievance_category": "separation",
+        "description": "I resigned and served my notice period but my full and final settlement has not been paid after two months."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "HIGH_OR_STANDARD",
+        "must_retrieve_any": [
+          "11.3",
+          "11.1"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V8",
+      "input": {
+        "title": "Uniform colour",
+        "grievance_category": "other",
+        "description": "I think the new uniform colour is unattractive and would like the design team to reconsider it next season."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "STANDARD",
+        "must_retrieve_any": [],
+        "no_evidence": true
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V9",
+      "input": {
+        "title": "Maternity benefit query",
+        "grievance_category": "maternity",
+        "description": "I am pregnant and my manager said I will not get maternity benefit because I joined only this year, and he moved me to night shifts."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "HIGH",
+        "must_retrieve_any": [
+          "6.1",
+          "6.2"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V10",
+      "input": {
+        "title": "Pinched at work",
+        "grievance_category": "manager_conduct",
+        "description": "My team leader pinched my waist while passing by and laughed when I objected. It has happened twice."
+      },
+      "expected": {
+        "route": "posh_ic",
+        "urgency": "HIGH",
+        "must_retrieve_any": [
+          "8.2",
+          "8.3"
+        ]
+      },
+      "set": "first-round (used to fix rules)"
+    },
+    {
+      "id": "V11",
+      "set": "fresh held-out",
+      "input": {
+        "title": "Shift manager standing too close",
+        "grievance_category": "manager_conduct",
+        "description": "My shift manager keeps standing very close behind me and whispering remarks about how I look in my uniform. When I moved away he said I should be friendlier if I want good shifts."
+      },
+      "expected": {
+        "route": "posh_ic",
+        "urgency": "HIGH",
+        "must_retrieve_any": [
+          "8.2",
+          "8.3"
+        ]
+      }
+    },
+    {
+      "id": "V12",
+      "set": "fresh held-out",
+      "input": {
+        "title": "Fine deducted from wages",
+        "grievance_category": "wages_overtime",
+        "description": "Payroll deducted money from my wages as a fine for a broken display item without asking me or showing any document."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "STANDARD",
+        "must_retrieve_any": [
+          "4.4"
+        ]
+      }
+    },
+    {
+      "id": "V13",
+      "set": "fresh held-out",
+      "input": {
+        "title": "Weapon mentioned in canteen",
+        "grievance_category": "other",
+        "reported_by": "colleague",
+        "description": "An employee told me in the canteen that he has a knife in his bag and will use it on the area manager today."
+      },
+      "expected": {
+        "route": "urgent_safety",
+        "urgency": "URGENT",
+        "must_retrieve_any": [
+          "7.4",
+          "7.2",
+          "8.5"
+        ]
+      }
+    },
+    {
+      "id": "V14",
+      "set": "fresh held-out",
+      "input": {
+        "title": "Promotion denied",
+        "grievance_category": "discrimination",
+        "description": "I was denied a promotion and I believe it is because of my religion. Two colleagues with less experience were promoted instead."
+      },
+      "expected": {
+        "route": "standard_er",
+        "urgency": "HIGH",
+        "must_retrieve_any": [
+          "2.2",
+          "6.5"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Case {{ case_id }}{% endblock %}
+{% block content %}
+<div id="caseRoot">
+  <div class="page-head">
+    <div>
+      <p class="eyebrow"><a href="/cases" class="link">Case history</a> / <span class="mono">{{ case_id }}</span></p>
+      <h1 id="caseTitle">Loading case…</h1>
+      <div class="chips" id="caseChips"></div>
+    </div>
+    <div class="head-actions" id="caseActions"></div>
+  </div>
+
+  <div id="urgentBox"></div>
+  <div id="restrictedBox"></div>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" class="tab active" data-tab="activity" aria-selected="true">Agent activity</button>
+    <button role="tab" class="tab" data-tab="report" aria-selected="false">Case report</button>
+    <button role="tab" class="tab" data-tab="review" aria-selected="false">Human review</button>
+  </div>
+
+  <section class="tab-panel" data-panel="activity">
+    <div class="pipeline-head">
+      <p class="muted" id="pipelineNote"></p>
+      <div class="legend">
+        <span class="badge b-llm">AI-generated</span>
+        <span class="badge b-sim">Simulated (demo)</span>
+        <span class="badge b-rules">Rule-based</span>
+        <span class="badge b-fallback">Fallback</span>
+      </div>
+    </div>
+    <ol class="pipeline" id="pipeline"></ol>
+  </section>
+
+  <section class="tab-panel" data-panel="report" hidden>
+    <div id="report"><p class="muted">The report appears when the workflow finishes.</p></div>
+  </section>
+
+  <section class="tab-panel" data-panel="review" hidden>
+    <div id="review"></div>
+  </section>
+</div>
+{% endblock %}

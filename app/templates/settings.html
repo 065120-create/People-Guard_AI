@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}AI setup & about{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Configuration</p>
+    <h1>AI setup &amp; about</h1>
+    <p class="lede">PeopleGuard runs without any paid service. Live AI is optional and is configured only on the server, through environment variables.</p>
+  </div>
+</div>
+
+<section class="card status-card status-{{ llm.state }}">
+  <div class="status-icon" aria-hidden="true">{% if llm.live %}●{% else %}○{% endif %}</div>
+  <div>
+    <h2>{% if llm.live %}Live AI is active{% elif llm.state == 'demo' %}Demo mode is active{% else %}Live AI is not configured{% endif %}</h2>
+    <p>{{ llm.message }}</p>
+    {% if not llm.live %}<p class="muted small">In demo mode, retrieval, triage, escalation rules, missing-information checks and the Quality &amp; Risk Gate are all real computations. Only the narrative wording (summaries, “how it applies” notes) is produced from templates, and every such output is labelled <span class="badge b-sim">Simulated (demo)</span>.</p>{% endif %}
+  </div>
+</section>
+
+<div class="grid-2">
+  <section class="card">
+    <div class="card-head"><h2>Enable live AI</h2></div>
+    <ol class="steps">
+      <li>Create a free API key with one of the providers below.</li>
+      <li>Set environment variables on the server (locally in a <code>.env</code> file; on Render under <em>Environment</em>):
+        <pre><code>LLM_PROVIDER=gemini
+GEMINI_API_KEY=your-key-here
+LLM_MODEL=gemini-2.5-flash   # optional</code></pre></li>
+      <li>Restart the app. The badge in the sidebar changes to <span class="badge b-llm">Live AI</span>.</li>
+    </ol>
+    <p class="muted small">Keys are read only on the server. They are never sent to the browser, stored in the database or written to logs.</p>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Provider options</h2></div>
+    <div class="table-wrap"><table class="table compact">
+      <thead><tr><th>LLM_PROVIDER</th><th>Key variable</th><th>Free allowance (check current limits)</th></tr></thead>
+      <tbody>
+        <tr><td><code>gemini</code></td><td><code>GEMINI_API_KEY</code></td><td>Google AI Studio free tier; per-minute and per-day request caps vary by model. Free-tier prompts may be used to improve Google's products — synthetic data only.</td></tr>
+        <tr><td><code>groq</code></td><td><code>GROQ_API_KEY</code></td><td>Free plan with per-model limits (around 30 requests/min, ~1,000/day and a low tokens-per-minute cap on larger models).</td></tr>
+        <tr><td><code>openrouter</code></td><td><code>OPENROUTER_API_KEY</code></td><td>Models ending in <code>:free</code>; roughly 20 requests/min and 50/day without credit.</td></tr>
+        <tr><td><code>openai_compatible</code></td><td><code>LLM_BASE_URL</code> (+ optional key)</td><td>Any OpenAI-style endpoint, e.g. a local Ollama server (free, runs on your machine).</td></tr>
+        <tr><td><code>mock</code></td><td>—</td><td>Default. No model calls.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted small">One case makes six model calls (one per agent). If you hit a rate limit, the affected agent falls back to rule-based output and is marked <span class="badge b-fallback">Fallback</span>.</p>
+  </section>
+</div>
+
+<section class="card">
+  <div class="card-head"><h2>Safeguards built into every mode</h2></div>
+  <div class="safeguards">
+    <div><h3>No invented policy</h3><p>Citations must come from retrieved handbook sections; quotes must be verbatim. The gate removes anything else.</p></div>
+    <div><h3>No invented law</h3><p>Legal frameworks are named only from the handbook's own reference map, always marked “requires verification”.</p></div>
+    <div><h3>POSH routing</h3><p>Sexual-harassment indicators route the case to the Internal Committee path, hide complaint details and restrict access.</p></div>
+    <div><h3>Urgent risk first</h3><p>Threats, violence and self-harm indicators are flagged at intake, before any agent runs.</p></div>
+    <div><h3>Allegations stay allegations</h3><p>Only case-record facts are "confirmed". Guilt, credibility and penalty language is removed.</p></div>
+    <div><h3>Data minimisation</h3><p>Phone numbers, emails and ID-like numbers are redacted from prompts and reports. Uploaded documents are treated as data, never as instructions.</p></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="card-head"><h2>Security and privacy of this deployment</h2></div>
+  <ul class="plain">
+    <li>Each browser gets its own workspace (a random cookie). Cases are not visible to other visitors — but this is <strong>isolation, not authentication</strong>. Anyone with your browser can see your cases.</li>
+    <li>{% if access_code_enabled %}This deployment is protected by a shared access code.{% else %}No access code is set. Set <code>APP_ACCESS_CODE</code> to require one before anyone can open the app.{% endif %}</li>
+    <li>On free hosting, the database is temporary and may be wiped on restart. Use synthetic cases only — this is not a production HR system.</li>
+  </ul>
+</section>
+{% endblock %}

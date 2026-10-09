@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}New case{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Intake</p>
+    <h1>New case</h1>
+    <p class="lede">Leave a field blank if the information is not available — the agents will list it as missing rather than guess. Use fictional or anonymised identifiers only.</p>
+  </div>
+</div>
+
+<div class="card sample-bar">
+  <label for="sampleSelect"><strong>Load a sample case</strong><span class="muted"> — fills the form with a synthetic grievance</span></label>
+  <div class="sample-row">
+    <select id="sampleSelect"><option value="">Choose a sample…</option></select>
+    <button class="btn btn-ghost" id="clearForm" type="button">Clear form</button>
+  </div>
+  <p class="muted small" id="sampleNote"></p>
+</div>
+
+<div id="urgentPanel" class="urgent-panel" hidden role="alert"></div>
+
+<form id="caseForm" class="card form" novalidate>
+  <input type="hidden" name="sample_case_id" id="f_sample_case_id">
+  <input type="hidden" name="sample_document" id="f_sample_document">
+  <div class="form-grid">
+    <div class="field span-2">
+      <label for="f_title">Case title <span class="req">required</span></label>
+      <input id="f_title" name="title" maxlength="150" required placeholder="e.g. Overtime not reflected in payslip">
+      <p class="err" data-err="title"></p>
+    </div>
+    <div class="field">
+      <label for="f_employee_ref">Employee identifier</label>
+      <input id="f_employee_ref" name="employee_ref" maxlength="40" placeholder="Fictional ID, e.g. NS-E-1043">
+      <p class="hint">Do not enter real names or ID numbers.</p>
+    </div>
+    <div class="field">
+      <label for="f_reported_by">Reported by</label>
+      <select id="f_reported_by" name="reported_by"></select>
+    </div>
+    <div class="field">
+      <label for="f_work_location">Work location</label>
+      <input id="f_work_location" name="work_location" maxlength="120" placeholder="Site, city, state/UT">
+    </div>
+    <div class="field">
+      <label for="f_establishment_type">Establishment type</label>
+      <select id="f_establishment_type" name="establishment_type"></select>
+    </div>
+    <div class="field">
+      <label for="f_employee_category">Employee category</label>
+      <select id="f_employee_category" name="employee_category"></select>
+    </div>
+    <div class="field">
+      <label for="f_grievance_category">Grievance category</label>
+      <select id="f_grievance_category" name="grievance_category"></select>
+      <p class="hint">Choose “Sexual harassment (POSH)” whenever you suspect it. Detection of sensitive wording is automatic but pattern-based, so it can miss indirect descriptions.</p>
+    </div>
+    <div class="field span-2">
+      <label for="f_description">Description of the issue <span class="req">required</span></label>
+      <textarea id="f_description" name="description" rows="7" maxlength="8000" required placeholder="Describe what was reported, in the reporter's words where possible."></textarea>
+      <div class="field-foot"><p class="err" data-err="description"></p><span class="muted small" id="descCount">0 / 8000</span></div>
+    </div>
+    <div class="field">
+      <label for="f_relevant_dates">Relevant dates</label>
+      <input id="f_relevant_dates" name="relevant_dates" maxlength="300" placeholder="e.g. 2, 5 and 9 September 2026">
+    </div>
+    <div class="field">
+      <label for="f_requested_outcome">Requested outcome</label>
+      <input id="f_requested_outcome" name="requested_outcome" maxlength="500" placeholder="What the reporter is asking for, if stated">
+    </div>
+    <div class="field span-2">
+      <label for="f_document">Supporting document <span class="muted">(optional · PDF, DOCX or TXT · max <span id="maxMb">5</span> MB)</span></label>
+      <input id="f_document" name="document" type="file" accept=".pdf,.docx,.txt,.md">
+      <p class="hint" id="docHint">Documents are treated as unverified data. Instructions inside them are ignored.</p>
+      <p class="err" data-err="document"></p>
+    </div>
+  </div>
+  <div class="form-actions">
+    <p class="muted small">On submit, intake triage runs immediately. Urgent risks are shown before the agents start.</p>
+    <button class="btn btn-primary" id="submitBtn" type="submit">Submit for analysis</button>
+  </div>
+  <p class="err form-err" id="formErr"></p>
+</form>
+{% endblock %}

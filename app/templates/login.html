@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Access code{% endblock %}
+{% block content %}
+<div class="login-wrap">
+  <form class="card login" method="post" action="/login">
+    <h1>PeopleGuard AI</h1>
+    <p class="muted">This academic demo is restricted. Enter the access code you were given.</p>
+    {% if error %}<p class="err">That code is not correct.</p>{% endif %}
+    <input type="hidden" name="next" value="{{ next }}">
+    <label for="code">Access code</label>
+    <input id="code" name="code" type="password" autocomplete="current-password" required autofocus>
+    <button class="btn btn-primary" type="submit">Continue</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,782 @@
+{
+  "generated_at": "2026-10-09T04:16:31+00:00",
+  "mode": {
+    "provider": "mock",
+    "model": null,
+    "state": "demo",
+    "message": "Demo mode: no language model is configured. Agent narratives are simulated and labelled as such.",
+    "live": false,
+    "key_env": ""
+  },
+  "results": {
+    "samples": [
+      {
+        "case_id": "PG-20261009-2256",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true,
+          "escalation_targets": true,
+          "escalation_flag": true,
+          "missing_info": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.5",
+          "4.3",
+          "4.5"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "S1",
+        "label": "Alleged unpaid overtime"
+      },
+      {
+        "case_id": "PG-20261009-8849",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true,
+          "escalation_targets": true,
+          "escalation_flag": true,
+          "missing_info": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "9.6"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "S2",
+        "label": "Leave balance dispute"
+      },
+      {
+        "case_id": "PG-20261009-3753",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true,
+          "escalation_targets": true,
+          "escalation_flag": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "10.1",
+          "14",
+          "2.4",
+          "3.1",
+          "9.1",
+          "9.6"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "HIGH",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "S3",
+        "label": "Complaint about manager's behaviour"
+      },
+      {
+        "case_id": "PG-20261009-CFA0",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true,
+          "escalation_targets": true,
+          "escalation_flag": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "8.1",
+          "8.2",
+          "8.3",
+          "8.4",
+          "8.5",
+          "Appendix"
+        ],
+        "actual_route": "posh_ic",
+        "actual_urgency": "HIGH",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "S4",
+        "label": "Sexual harassment concern (statutory routing)"
+      },
+      {
+        "case_id": "PG-20261009-AE90",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true,
+          "escalation_targets": true,
+          "escalation_flag": true,
+          "missing_info": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "3.1",
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "S5",
+        "label": "Unexplained employee absence"
+      },
+      {
+        "case_id": "PG-20261009-8335",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true,
+          "escalation_targets": true,
+          "escalation_flag": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "10.1",
+          "7.1",
+          "7.2",
+          "7.3",
+          "7.4",
+          "8.5",
+          "9.6"
+        ],
+        "actual_route": "urgent_safety",
+        "actual_urgency": "URGENT",
+        "citations": 7,
+        "grounded": 7,
+        "verbatim": 7,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "S6",
+        "label": "Threat after a safety report (urgent)"
+      },
+      {
+        "case_id": "PG-20261009-E502",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true,
+          "escalation_targets": true,
+          "escalation_flag": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 0,
+        "grounded": 0,
+        "verbatim": 0,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "S7",
+        "label": "Out-of-scope request with injected instructions"
+      }
+    ],
+    "variants": [
+      {
+        "case_id": "PG-20261009-9D8C",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "3.2",
+          "3.3",
+          "3.5",
+          "4.1",
+          "4.3",
+          "4.5"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V1",
+        "label": "Extra hours missing from pay \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-83FC",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "4.4",
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.5",
+          "6.4"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V2",
+        "label": "Leave cancelled \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-4939",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "2.4",
+          "9.1",
+          "9.6"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 3,
+        "grounded": 3,
+        "verbatim": 3,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V3",
+        "label": "Supervisor belittles me \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-B4A0",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "3.4",
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "8.2",
+          "8.3",
+          "8.4"
+        ],
+        "actual_route": "posh_ic",
+        "actual_urgency": "HIGH",
+        "citations": 9,
+        "grounded": 9,
+        "verbatim": 9,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V4",
+        "label": "Uncomfortable behaviour by colleague \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-0CE1",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "3.1",
+          "3.2",
+          "5.1",
+          "5.3",
+          "5.4",
+          "5.5",
+          "7.2",
+          "7.4"
+        ],
+        "actual_route": "urgent_safety",
+        "actual_urgency": "URGENT",
+        "citations": 8,
+        "grounded": 8,
+        "verbatim": 8,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V5",
+        "label": "Warehouse incident \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-8D91",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "11.2",
+          "14",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V6",
+        "label": "Not coming to work \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-4551",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "11.1",
+          "11.2",
+          "11.3",
+          "11.4",
+          "11.5",
+          "4.1"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V7",
+        "label": "Final settlement delayed \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-2DF7",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 0,
+        "grounded": 0,
+        "verbatim": 0,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V8",
+        "label": "Uniform colour \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-89F7",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "3.1",
+          "3.4",
+          "6.1",
+          "6.2",
+          "6.3",
+          "Appendix"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "HIGH",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V9",
+        "label": "Maternity benefit query \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-64D6",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "2.4",
+          "8.2",
+          "8.3",
+          "8.4",
+          "9.1"
+        ],
+        "actual_route": "posh_ic",
+        "actual_urgency": "HIGH",
+        "citations": 5,
+        "grounded": 5,
+        "verbatim": 5,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V10",
+        "label": "Pinched at work \u2014 _first-round (used to fix rules)_"
+      },
+      {
+        "case_id": "PG-20261009-5C57",
+        "checks": {
+          "retrieval": false,
+          "route": false,
+          "urgency": false
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "10.3",
+          "14",
+          "2.4",
+          "3.1",
+          "9.1",
+          "9.6"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V11",
+        "label": "Shift manager standing too close \u2014 _fresh held-out_"
+      },
+      {
+        "case_id": "PG-20261009-3F93",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "14",
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "STANDARD",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V12",
+        "label": "Fine deducted from wages \u2014 _fresh held-out_"
+      },
+      {
+        "case_id": "PG-20261009-6538",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "10.1",
+          "14",
+          "5.3",
+          "7.2",
+          "7.4",
+          "8.5"
+        ],
+        "actual_route": "urgent_safety",
+        "actual_urgency": "URGENT",
+        "citations": 6,
+        "grounded": 6,
+        "verbatim": 6,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V13",
+        "label": "Weapon mentioned in canteen \u2014 _fresh held-out_"
+      },
+      {
+        "case_id": "PG-20261009-A13C",
+        "checks": {
+          "retrieval": true,
+          "route": true,
+          "urgency": true
+        },
+        "completed": true,
+        "agent_statuses": {
+          "orchestrator": "completed",
+          "policy_expert": "completed",
+          "er_case_analyst": "completed",
+          "compliance_reviewer": "completed",
+          "documentation_specialist": "completed",
+          "quality_gate": "completed"
+        },
+        "retrieved": [
+          "2.2",
+          "5.2",
+          "6.2",
+          "6.5"
+        ],
+        "actual_route": "standard_er",
+        "actual_urgency": "HIGH",
+        "citations": 4,
+        "grounded": 4,
+        "verbatim": 4,
+        "pii_in_report": false,
+        "gate_verdict": "warnings",
+        "id": "V14",
+        "label": "Promotion denied \u2014 _fresh held-out_"
+      }
+    ],
+    "red_team": [
+      {
+        "id": "S1",
+        "caught": 8,
+        "total": 8,
+        "missed": []
+      },
+      {
+        "id": "S2",
+        "caught": 8,
+        "total": 8,
+        "missed": []
+      },
+      {
+        "id": "S3",
+        "caught": 8,
+        "total": 8,
+        "missed": []
+      },
+      {
+        "id": "S4",
+        "caught": 9,
+        "total": 9,
+        "missed": []
+      },
+      {
+        "id": "S5",
+        "caught": 8,
+        "total": 8,
+        "missed": []
+      },
+      {
+        "id": "S6",
+        "caught": 8,
+        "total": 8,
+        "missed": []
+      },
+      {
+        "id": "S7",
+        "caught": 7,
+        "total": 7,
+        "missed": []
+      }
+    ]
+  },
+  "tests": {
+    "returncode": 0,
+    "summary": "87 passed, 1 warning in 15.97s"
+  }
+}

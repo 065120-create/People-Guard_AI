@@ -1,0 +1,10 @@
+SYNTHETIC DOCUMENT - Northstar Retail Services Pvt. Ltd. (fictional)
+Attendance extract supplied by employee NS-E-1043 (own notes, not a system export)
+
+Date        Rostered shift     Time out (employee's note)
+02 Sep 2026 10:00-19:00        21:30
+05 Sep 2026 10:00-19:00        22:00
+09 Sep 2026 10:00-19:00        21:15
+12 Sep 2026 10:00-19:00        22:10
+
+September 2026 payslip: basic and allowances shown; no overtime line.

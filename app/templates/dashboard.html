@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Employee relations workspace</p>
+    <h1>PeopleGuard AI</h1>
+    <p class="lede">Multi-agent decision support for grievance handling: policy-grounded analysis, compliance flags and draft case reports for HR review — for the fictional Northstar Retail Services Pvt. Ltd.</p>
+  </div>
+  <div class="head-actions">
+    <a class="btn btn-primary" href="/cases/new">
+      <svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z"/></svg>New case</a>
+  </div>
+</div>
+
+<section class="kpis" id="kpis" aria-label="Case counts">
+  <div class="kpi"><span class="kpi-label">Total demo cases</span><span class="kpi-value" data-k="total">–</span><span class="kpi-sub">in this browser workspace</span></div>
+  <div class="kpi"><span class="kpi-label">Awaiting review</span><span class="kpi-value" data-k="awaiting_review">–</span><span class="kpi-sub">drafts needing an HR decision</span></div>
+  <div class="kpi kpi-alert"><span class="kpi-label">Flagged for escalation</span><span class="kpi-value" data-k="escalated">–</span><span class="kpi-sub"><span data-k="urgent">0</span> urgent</span></div>
+  <div class="kpi kpi-ok"><span class="kpi-label">Completed</span><span class="kpi-value" data-k="completed">–</span><span class="kpi-sub">approved by a reviewer</span></div>
+</section>
+
+<div class="empty-hero card" id="emptyHero" hidden>
+  <div>
+    <h2>Start with the demo cases</h2>
+    <p>Load seven synthetic grievances — overtime, leave, manager conduct, a POSH concern, an unexplained absence, an urgent threat and an out-of-scope request with injected instructions — and run the full agent workflow on each.</p>
+  </div>
+  <div class="row-actions">
+    <button class="btn btn-primary" id="loadAll">Load and run all 7 demo cases</button>
+    <a class="btn btn-ghost" href="/cases/new">Or enter a case</a>
+  </div>
+</div>
+
+<div class="grid-2">
+  <section class="card">
+    <div class="card-head"><h2>Recent cases</h2><a href="/cases" class="link">View all</a></div>
+    <div id="recentCases" class="list-table"><p class="muted pad">Loading…</p></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h2>Recent activity</h2></div>
+    <ol id="activity" class="timeline"><li class="muted">Loading…</li></ol>
+  </section>
+</div>
+
+<section class="card how">
+  <div class="card-head"><h2>How a case moves through PeopleGuard</h2></div>
+  <ol class="pipeline-mini">
+    <li><span>1</span><div><strong>Orchestrator</strong><p>Assigns a case ID, classifies, detects POSH and urgent risk at intake, sets the route.</p></div></li>
+    <li><span>2</span><div><strong>Policy Expert</strong><p>Retrieves handbook sections and quotes them verbatim with section references.</p></div></li>
+    <li><span>3</span><div><strong>ER Case Analyst</strong><p>Separates allegations from record facts, finds gaps, drafts neutral questions.</p></div></li>
+    <li><span>4</span><div><strong>Compliance Reviewer</strong><p>Names legal questions to verify — never states deadlines, rates or entitlements.</p></div></li>
+    <li><span>5</span><div><strong>Documentation Specialist</strong><p>Assembles the 12-part draft report and evidence checklist.</p></div></li>
+    <li><span>6</span><div><strong>Quality &amp; Risk Gate</strong><p>Checks citations, neutrality, invented law, personal data and escalation; corrects or blocks.</p></div></li>
+  </ol>
+  <p class="muted small">Every report ends with a human review step. Nothing is sent to an employee and no decision is made by the system.</p>
+</section>
+{% endblock %}
